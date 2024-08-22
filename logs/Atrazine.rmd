@@ -3,16 +3,24 @@ title: "R Notebook"
 output: html_notebook
 ---
 
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
-
-Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
-
 ```{r}
-plot(cars)
+getwd()
+```
+```{r}
+pasCts <- "C:/Users/mxa1132-admin/OneDrive/Documents/R_PHD_analysis/RNA-Seq-Daphnia/Metadata/GENEcountTableNew.csv" #where is the count table
+pasAnno <- "C:/Users/mxa1132-admin/OneDrive/Documents/R_PHD_analysis/RNA-Seq-Daphnia/Metadata/Metadata_atrazine.csv" #where is the label/metadata?
+
 ```
 
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+```{r}
+cts <- as.matrix(read.csv(pasCts,row.names="genes",check.names = FALSE)) #read in counts use 'genes' column for names
+coldata <- read.csv(pasAnno,row.names="SAMPLE_ID") #read labels using 'BGIseq500FolderName' for names usually 'sample-id'
 
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+```
 
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
+```{r}
+
+
+```
+

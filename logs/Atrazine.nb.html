@@ -1752,31 +1752,39 @@ display: none;
 
 
 <!-- rnb-text-begin -->
-<p>This is an <a href="http://rmarkdown.rstudio.com">R Markdown</a>
-Notebook. When you execute code within the notebook, the results appear
-beneath the code.</p>
-<p>Try executing this chunk by clicking the <em>Run</em> button within
-the chunk or by placing your cursor inside it and pressing
-<em>Ctrl+Shift+Enter</em>.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGxvdChjYXJzKVxuYGBgIn0= -->
-<pre class="r"><code>plot(cars)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ2V0d2QoKVxuYGBgIn0= -->
+<pre class="r"><code>getwd()</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiQzovVXNlcnMvbXhhMTEzMi1hZG1pbi9PbmVEcml2ZS9Eb2N1bWVudHMvUl9QSERfYW5hbHlzaXMvUk5BLVNlcS1EYXBobmlhL2xvZ3NcIlxuIn0= -->
+<pre><code>[1] &quot;C:/Users/mxa1132-admin/OneDrive/Documents/R_PHD_analysis/RNA-Seq-Daphnia/logs&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGFzQ3RzIDwtIFwiQzovVXNlcnMvbXhhMTEzMi1hZG1pbi9PbmVEcml2ZS9Eb2N1bWVudHMvUl9QSERfYW5hbHlzaXMvUk5BLVNlcS1EYXBobmlhL01ldGFkYXRhL0dFTkVjb3VudFRhYmxlTmV3LmNzdlwiICN3aGVyZSBpcyB0aGUgY291bnQgdGFibGVcbnBhc0Fubm8gPC0gXCJDOi9Vc2Vycy9teGExMTMyLWFkbWluL09uZURyaXZlL0RvY3VtZW50cy9SX1BIRF9hbmFseXNpcy9STkEtU2VxLURhcGhuaWEvTWV0YWRhdGEvTWV0YWRhdGFfYXRyYXppbmUuY3N2XCIgI3doZXJlIGlzIHRoZSBsYWJlbC9tZXRhZGF0YT9cblxuYGBgIn0= -->
+<pre class="r"><code>pasCts &lt;- &quot;C:/Users/mxa1132-admin/OneDrive/Documents/R_PHD_analysis/RNA-Seq-Daphnia/Metadata/GENEcountTableNew.csv&quot; #where is the count table
+pasAnno &lt;- &quot;C:/Users/mxa1132-admin/OneDrive/Documents/R_PHD_analysis/RNA-Seq-Daphnia/Metadata/Metadata_atrazine.csv&quot; #where is the label/metadata?
+</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>Add a new chunk by clicking the <em>Insert Chunk</em> button on the
-toolbar or by pressing <em>Ctrl+Alt+I</em>.</p>
-<p>When you save the notebook, an HTML file containing the code and
-output will be saved alongside it (click the <em>Preview</em> button or
-press <em>Ctrl+Shift+K</em> to preview the HTML file).</p>
-<p>The preview shows you a rendered HTML copy of the contents of the
-editor. Consequently, unlike <em>Knit</em>, <em>Preview</em> does not
-run any R code chunks. Instead, the output of the chunk when it was last
-run in the editor is displayed.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY3RzIDwtIGFzLm1hdHJpeChyZWFkLmNzdihwYXNDdHMscm93Lm5hbWVzPVwiZ2VuZXNcIixjaGVjay5uYW1lcyA9IEZBTFNFKSkgI3JlYWQgaW4gY291bnRzIHVzZSAnZ2VuZXMnIGNvbHVtbiBmb3IgbmFtZXNcbmNvbGRhdGEgPC0gcmVhZC5jc3YocGFzQW5ubyxyb3cubmFtZXM9XCJTQU1QTEVfSURcIikgI3JlYWQgbGFiZWxzIHVzaW5nICdCR0lzZXE1MDBGb2xkZXJOYW1lJyBmb3IgbmFtZXMgdXN1YWxseSAnc2FtcGxlLWlkJ1xuXG5gYGAifQ== -->
+<pre class="r"><code>cts &lt;- as.matrix(read.csv(pasCts,row.names=&quot;genes&quot;,check.names = FALSE)) #read in counts use &#39;genes&#39; column for names
+coldata &lt;- read.csv(pasAnno,row.names=&quot;SAMPLE_ID&quot;) #read labels using &#39;BGIseq500FolderName&#39; for names usually &#39;sample-id&#39;
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpUaGlzIGlzIGFuIFtSIE1hcmtkb3duXShodHRwOi8vcm1hcmtkb3duLnJzdHVkaW8uY29tKSBOb3RlYm9vay4gV2hlbiB5b3UgZXhlY3V0ZSBjb2RlIHdpdGhpbiB0aGUgbm90ZWJvb2ssIHRoZSByZXN1bHRzIGFwcGVhciBiZW5lYXRoIHRoZSBjb2RlLiANCg0KVHJ5IGV4ZWN1dGluZyB0aGlzIGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqUnVuKiBidXR0b24gd2l0aGluIHRoZSBjaHVuayBvciBieSBwbGFjaW5nIHlvdXIgY3Vyc29yIGluc2lkZSBpdCBhbmQgcHJlc3NpbmcgKkN0cmwrU2hpZnQrRW50ZXIqLiANCg0KYGBge3J9DQpwbG90KGNhcnMpDQpgYGANCg0KQWRkIGEgbmV3IGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqSW5zZXJ0IENodW5rKiBidXR0b24gb24gdGhlIHRvb2xiYXIgb3IgYnkgcHJlc3NpbmcgKkN0cmwrQWx0K0kqLg0KDQpXaGVuIHlvdSBzYXZlIHRoZSBub3RlYm9vaywgYW4gSFRNTCBmaWxlIGNvbnRhaW5pbmcgdGhlIGNvZGUgYW5kIG91dHB1dCB3aWxsIGJlIHNhdmVkIGFsb25nc2lkZSBpdCAoY2xpY2sgdGhlICpQcmV2aWV3KiBidXR0b24gb3IgcHJlc3MgKkN0cmwrU2hpZnQrSyogdG8gcHJldmlldyB0aGUgSFRNTCBmaWxlKS4NCg0KVGhlIHByZXZpZXcgc2hvd3MgeW91IGEgcmVuZGVyZWQgSFRNTCBjb3B5IG9mIHRoZSBjb250ZW50cyBvZiB0aGUgZWRpdG9yLiBDb25zZXF1ZW50bHksIHVubGlrZSAqS25pdCosICpQcmV2aWV3KiBkb2VzIG5vdCBydW4gYW55IFIgY29kZSBjaHVua3MuIEluc3RlYWQsIHRoZSBvdXRwdXQgb2YgdGhlIGNodW5rIHdoZW4gaXQgd2FzIGxhc3QgcnVuIGluIHRoZSBlZGl0b3IgaXMgZGlzcGxheWVkLg0K</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpgYGB7cn0NCmdldHdkKCkNCmBgYA0KYGBge3J9DQpwYXNDdHMgPC0gIkM6L1VzZXJzL214YTExMzItYWRtaW4vT25lRHJpdmUvRG9jdW1lbnRzL1JfUEhEX2FuYWx5c2lzL1JOQS1TZXEtRGFwaG5pYS9NZXRhZGF0YS9HRU5FY291bnRUYWJsZU5ldy5jc3YiICN3aGVyZSBpcyB0aGUgY291bnQgdGFibGUNCnBhc0Fubm8gPC0gIkM6L1VzZXJzL214YTExMzItYWRtaW4vT25lRHJpdmUvRG9jdW1lbnRzL1JfUEhEX2FuYWx5c2lzL1JOQS1TZXEtRGFwaG5pYS9NZXRhZGF0YS9NZXRhZGF0YV9hdHJhemluZS5jc3YiICN3aGVyZSBpcyB0aGUgbGFiZWwvbWV0YWRhdGE/DQoNCmBgYA0KDQpgYGB7cn0NCmN0cyA8LSBhcy5tYXRyaXgocmVhZC5jc3YocGFzQ3RzLHJvdy5uYW1lcz0iZ2VuZXMiLGNoZWNrLm5hbWVzID0gRkFMU0UpKSAjcmVhZCBpbiBjb3VudHMgdXNlICdnZW5lcycgY29sdW1uIGZvciBuYW1lcw0KY29sZGF0YSA8LSByZWFkLmNzdihwYXNBbm5vLHJvdy5uYW1lcz0iU0FNUExFX0lEIikgI3JlYWQgbGFiZWxzIHVzaW5nICdCR0lzZXE1MDBGb2xkZXJOYW1lJyBmb3IgbmFtZXMgdXN1YWxseSAnc2FtcGxlLWlkJw0KDQpgYGANCg0KDQpgYGB7cn0NCg0KDQpgYGANCg0K</div>
 
 
 
